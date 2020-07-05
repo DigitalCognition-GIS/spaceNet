@@ -109,6 +109,22 @@ download: s3://spacenet-dataset/AOIs/AOI_2_Vegas/PS-RGB/15OCT22183656-S2AS_R7C7-
 
 <br/>
 
+- Within the Spacenet DataSet Diectory - , we have ```Geotiffs of Panchromatic raster data``` .   
+So what exactly are - ``` geotiffs of Panchromatic raster data``` , how can we understand this File format further?    
+
+> The - geotiffs of Panchromatic raster data - mean we have GeoTiFF Raster Data Files which are Band 8 PanChromatic .   
+Panchromatic is further defined within these links / reads - ( Work In Progress) 
+- ArcGIS - 
+- QGIS - 
+
+> The panchromatic data is usually a representative of a range of wavelengths and bands, for example, the thermal infrared or visible, i.e., it combines different colors hence the name “pan” chromatic. This image is more of a combination of blue, green and red data in a measure of the reflectance. Some, however, can also include radiation at a longer wavelength than the red light, called “the near infrared” radiation.    
+Source = https://eos.com/panchromatic/ ( EOS.COM ) 
+
+
+
+<br/>
+
+
 
 Rohit Dhankar - https://www.linkedin.com/in/rohitdhankar/
 
