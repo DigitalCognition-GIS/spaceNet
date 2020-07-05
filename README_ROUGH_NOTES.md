@@ -50,13 +50,53 @@ aws-cli/2.0.28 Python/3.7.3 Linux/5.3.0-62-generic botocore/2.0.0dev32
 - if you dont have already - Create an IAM User for AWS CLI Login   
 > Source - https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html   
 
-- First attempt to download the data from AWS , dint go right - as seen at Error printout below :-   
- that compressed GNUZip file is not at that Path - tar.gz  
+- First attempt to download the data from AWS , dint go right - as seen at Error printout below , that compressed GNUZip file is not at that Path - tar.gz   
 
 ```
-aws s3 cp s3://spacenet-dataset/spacenet/SN2_buildings/tarballs/AOI_2_Vegas_test_public.tar.gz . fatal error: An error occurred (404) when calling the HeadObject operation: Key "spacenet/SN2_buildings/tarballs/AOI_2_Vegas_test_public.tar.gz" does not exist
+aws s3 cp s3://spacenet-dataset/spacenet/SN2_buildings/tarballs/AOI_2_Vegas_test_public.tar.gz .   
+ fatal error: An error occurred (404) when calling the HeadObject    
+operation: Key "spacenet/SN2_buildings/tarballs/AOI_2_Vegas_test_public.tar.gz" does not exist  
+
 ```
 
+- Here onwards i googled a bit and found the right resource - https://spacenetchallenge.github.io/datasets/datasetHomePage.html    
+whereupon whence i list out files at AWS S3 - i can see listed the ```.TIF ``` files.
+```
+(base) dhankar@dhankar-1:~/spaceNet/spaceNet$ aws s3 ls s3://spacenet-dataset/
+                           PRE /
+                           PRE AOIs/
+                           PRE Hosted-Datasets/
+                           PRE SpaceNet_Off-Nadir_Dataset/
+                           PRE spacenet-model-weights/
+                           PRE spacenet-stac/
+                           PRE spacenet/
+(base) dhankar@dhankar-1:~/spaceNet/spaceNet$ aws s3 ls s3://spacenet-dataset/AOIs/
+                           PRE AOI_10_Dar_Es_Salaam/
+                           PRE AOI_1_Rio/
+                           PRE AOI_2_Vegas/
+                           PRE AOI_3_Paris/
+                           PRE AOI_4_Shanghai/
+                           PRE AOI_5_Khartoum/
+                           PRE AOI_6_Atlanta/
+                           PRE AOI_7_Moscow/
+                           PRE AOI_8_Mumbai/
+                           PRE AOI_9_San_Juan/
+(base) dhankar@dhankar-1:~/spaceNet/spaceNet$ aws s3 ls s3://spacenet-dataset/AOIs/AOI_2_Vegas/PS-RGB/
+2019-08-02 02:17:49      45245 056155973040_01_LAYOUT.JPG
+2019-08-02 02:17:49       6584 056155973040_01_README.TXT
+2019-08-02 02:17:49       8320 056155973040_01_README.XML
+2019-08-02 02:17:49  402656903 15OCT22183656-S2AS_R1C1-056155973040_01_P001.TIF
+2019-08-04 03:57:37  536760406 15OCT22183656-S2AS_R1C1-056155973040_01_P001_COG.TIF
+2019-08-02 02:17:49  402656903 15OCT22183656-S2AS_R1C2-056155973040_01_P001.TIF
+
+```
+
+```
+$ aws s3 cp s3://spacenet-dataset/AOIs/AOI_2_Vegas/PS-RGB/15OCT22183656-S2AS_R7C7-056155973040_01_P001_COG.TIF /home/dhankar/_dc_all/spaceNet/test_data
+
+download: s3://spacenet-dataset/AOIs/AOI_2_Vegas/PS-RGB/15OCT22183656-S2AS_R7C7-056155973040_01_P001_COG.TIF to test_data/15OCT22183656-S2AS_R7C7-056155973040_01_P001_COG.TIF
+```
+- This ```15OCT22183656-S2AS_R7C7-056155973040_01_P001_COG.TIF``` is a 252MB File .
 
 <br/>
 
