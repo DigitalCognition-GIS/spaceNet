@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img src="https://github.com/DigitalCognition-GIS/py_qgis_2020/blob/master/ScreenCaptures_QGIS/Geospatial_Quadrants-2.jpg" width= "350px">
+    <img src="https://github.com/DigitalCognition-GIS/spaceNet/blob/master/ScreenCaptures_QGIS_SpaceNet_etc/Screenshot%20from%202020-07-05%2017-18-10.png" width= "650px">
 </p>
 
 <h1 align="center">SpaceNet - https://spacenet.ai/</h1>
