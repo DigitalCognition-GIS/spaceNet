@@ -30,7 +30,7 @@
 
 - Source URL - https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html  
 
-> curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"  
+> $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"  
 
 ```
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -42,10 +42,20 @@ unzip awscliv2.zip
 sudo ./aws/install   
 
 
-> $ aws --version
+> $ aws --version   
+```
 aws-cli/2.0.28 Python/3.7.3 Linux/5.3.0-62-generic botocore/2.0.0dev32  
+```
 
+- if you dont have already - Create an IAM User for AWS CLI Login   
+> Source - https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html   
 
+- First attempt to download the data from AWS , dint go right - as seen at Error printout below :-   
+ that compressed GNUZip file is not at that Path - tar.gz  
+
+```
+aws s3 cp s3://spacenet-dataset/spacenet/SN2_buildings/tarballs/AOI_2_Vegas_test_public.tar.gz . fatal error: An error occurred (404) when calling the HeadObject operation: Key "spacenet/SN2_buildings/tarballs/AOI_2_Vegas_test_public.tar.gz" does not exist
+```
 
 
 <br/>
