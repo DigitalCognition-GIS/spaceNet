@@ -50,7 +50,9 @@ aws-cli/2.0.28 Python/3.7.3 Linux/5.3.0-62-generic botocore/2.0.0dev32
 - if you dont have already - Create an IAM User for AWS CLI Login   
 > Source - https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html   
 
-- First attempt to download the data from AWS , dint go right - as seen at Error printout below , that compressed GNUZip file is not at that Path - tar.gz   
+- First attempt to download the data from AWS , dint go right - i was following the Download code snippet at the Bottom Right of this page -https://spacenet.ai/las-vegas/ ``` AOI 2 – Vegas – Building Extraction Testing ``` ,  as seen below got an Error  , that compressed GNUZip file - tar.gz , is not at that Path.    
+Its possible i misunderstood the instructions to downLoad.   
+
 
 ```
 aws s3 cp s3://spacenet-dataset/spacenet/SN2_buildings/tarballs/AOI_2_Vegas_test_public.tar.gz .   
@@ -90,6 +92,13 @@ whereupon whence i list out files at AWS S3 - i can see listed the ```.TIF ``` f
 2019-08-02 02:17:49  402656903 15OCT22183656-S2AS_R1C2-056155973040_01_P001.TIF
 
 ```
+
+- As seen above we have a small segment of the files within the DIRECTORY -    
+The ```15OCT22183656-S2AS_R1C1-056155973040_01_P001_COG.TIF``` file which is a COG.TIF file fomat is as defined here - https://www.cogeo.org/   
+
+> A Cloud Optimized GeoTIFF (COG) is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud. It does this by leveraging the ability of clients issuing ​HTTP GET range requests to ask for just the parts of a file they need.   
+
+ 
 
 ```
 $ aws s3 cp s3://spacenet-dataset/AOIs/AOI_2_Vegas/PS-RGB/15OCT22183656-S2AS_R7C7-056155973040_01_P001_COG.TIF /home/dhankar/_dc_all/spaceNet/test_data
